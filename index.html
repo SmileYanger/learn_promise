@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <!-- <script src="./data//content.txt"></script>-->
+    <!-- <script src="./AJAX封装练习.js"></script>  -->
+    <!-- <script src="./promise.js"></script> -->
+    <!-- <script src="./队列.js"></script> -->
+</head>
+
+<body>
+    <h2>Promise体验</h2>
+    <button id="btn">点击抽奖</button>
+    <script>
+        // const p1 = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve('on Yeah')
+        //     }, 1000);
+        // })
+        // const result = p1.then(value => {
+        //     console.log('我是成功的promise' + '----'+ value)
+        //     return new Promise((resolve, reject) => {
+        //         reject(value)
+        //     })
+        // }, reason => {
+        //     console.log('我是失败的promise' + '----'+ reason)
+        //     // return reason
+        //     return new Promise((resolve, reject) => {
+        //         resolve(reason)
+        //     })
+        // })
+        // console.log(result)
+        async function aa(){
+            console.log(11)
+            const ab = await 'ab';
+            console.log(ab)
+            console.log('abc')
+        }
+        aa()
+    </script>
+</body>
+
+</html>

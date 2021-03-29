@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="./data//content.txt"></script>
+</head>
+
+<body>
+    <h2>Promise AJAX 操作</h2>
+    <button id="btn">点击发送AJAX</button>
+    <script>
+        const btn = document.querySelector('#btn');
+        btn.addEventListener('click', function () {
+            //创建Promise
+            const p = new Promise((resolve, reject) => {
+                //1. 创建对象
+                const xhr = new XMLHttpRequest();
+                //2. 初始化
+                xhr.open('GET', './data/content.txt');
+                //3.发送
+                xhr.send()
+                //4. 处理响应结果
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        //判断响应状态码 2xx表示成功
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            //输出响应结果
+                            resolve(xhr.response)
+                        } else {
+                            //控制台输出状态码
+                            reject(xhr.status)
+                        }
+                    }
+                }
+            })
+            console.log(p)
+            p.then((data) => {
+                console.log(data)
+            }, (code) => {
+                console.log(code)
+            })
+        })
+    </script>
+</body>
+
+</html>
